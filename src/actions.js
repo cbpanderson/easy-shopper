@@ -4,3 +4,17 @@ export function toggleChecked (data) {
         data: data
     }
 }
+
+export function addItem (data) {
+    return {
+        type: 'ADD_ITEM',
+        data: data
+    }
+}
+
+export function deleteItem (data) {
+    return {
+        type: 'DELETE_ITEM',
+        data: data
+    }
+}

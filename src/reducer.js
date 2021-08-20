@@ -12,13 +12,18 @@ export function shoppingListReducer (state, action) {
         return initialState;
     }
     console.log(action);
+
+    let new_state = deepcopy(state);
+   
     if (action.type === 'TOGGLE_CHECKED') {
-        let new_state = deepcopy(state);
         new_state.shopping_list[action.data.index].isChecked = !state.shopping_list[action.data.index].isChecked;
-        return new_state;
+    } else if(action.type === 'ADD_ITEM') {
+        new_state.shopping_list.push({name: action.data.name, isChecked: false});
+    } else if((action.type === 'DELETE_ITEM') ){
+        new_state.shopping_list = new_state.shopping_list.filter(item => !item.isChecked);
     }
 
-    return state;
+    return new_state;
 }
 
 export default shoppingListReducer;
