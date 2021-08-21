@@ -9,28 +9,30 @@ import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
-import { deleteItem } from '../actions.js';
-import {toggleChecked} from '../actions.js';
+import { deleteItemShop } from '../actions.js';
+import { toggleCheckedShop } from '../actions.js';
 
 class ShoppingList extends (React.Component) {
     
 handleChange(event, index){
     // console.log(event.target.value, index);
-    this.props.toggleChecked({index});
+    this.props.toggleCheckedShop({index});
 }
 
 handleDelete(event) {
-  this.props.deleteItem({});
+  this.props.deleteItemShop({});
 }
 
 
     render() {
+      //update global variable or local variable to say list = shopping-list
         return (
             <Card>
               <CardContent>
+                <h2>Shopping List</h2>
                 <ul>
                   {this.props.shopping_list.map((item, index) => {
-                    return <li key = {index}>
+                    return <li style={{listStyleType:'none'}} key = {index}>
                         <FormControlLabel
                           control={
                             <Checkbox
@@ -46,7 +48,7 @@ handleDelete(event) {
                 </ul>
               </CardContent>
               <CardActions>
-                  <Button component={Link} to="/add" >Add Item</Button>
+                  <Button component={Link} to="/addShop" >Add Item</Button>
                   <Button component={Link} to="/" onClick={(e) => this.handleDelete(e)}>Delete Item</Button>
               </CardActions>
             </Card>
@@ -61,11 +63,11 @@ function mapStateToProps(state) {
 //writes data to store
 function mapDispatchToProps (dispatch) {
     return {
-        toggleChecked: function (data) {
-            dispatch(toggleChecked(data))
+        toggleCheckedShop: function (data) {
+            dispatch(toggleCheckedShop(data))
         },
-        deleteItem: function (data) {
-          dispatch(deleteItem(data))
+        deleteItemShop: function (data) {
+          dispatch(deleteItemShop(data))
       }
     }
 }

@@ -7,9 +7,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import { TextField } from '@material-ui/core';
 
-import {addItem} from '../actions.js';
+import {addItemUsual} from '../actions.js';
 
-class AddItem extends (React.Component) {
+class AddItemUsual extends (React.Component) {
     constructor(props) {
         super(props);
 
@@ -20,7 +20,7 @@ class AddItem extends (React.Component) {
         console.log(event);
         event.preventDefault();
 
-        this.props.addItem({name: this.state.item});
+        this.props.addItemUsual({name: this.state.item});
         this.setState({item: ''});
     }
 
@@ -56,11 +56,11 @@ function mapStateToProps(state) {
 //writes data to store
 function mapDispatchToProps (dispatch) {
     return {
-        addItem: function (data) {
-            dispatch(addItem(data))
+        addItemUsual: function (data) {
+            dispatch(addItemUsual(data))
         }
     }
 }
 
-var ConnectedAddItem = connect(mapStateToProps, mapDispatchToProps)(AddItem);
+var ConnectedAddItem = connect(mapStateToProps, mapDispatchToProps)(AddItemUsual);
 export default ConnectedAddItem;

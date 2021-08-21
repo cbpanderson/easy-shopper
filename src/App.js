@@ -13,7 +13,8 @@ import { Provider } from 'react-redux';
 import ConnectedShoppingList from './components/shopping-list';
 import TheUsual from './components/the-usual';
 import store from './store.js';
-import AddItem from './components/add-item';
+import AddItemShop from './components/add-item-shop';
+import AddItemUsual from './components/add-item-usual';
 
 const theme = createTheme({
   palette: {
@@ -50,10 +51,10 @@ function App() {
                   <Typography variant="h6" color="inherit" noWrap>
                     Easy Shopper
                   </Typography>
-                  <Box style={{marginLeft:'80%'}} display="flex" alignItems="center">
-                   <Box flexGrow={1}>
-                    <Link to="/">Shopping List</Link>
-                    <Link to="/saved">The Usual (Stored List)</Link>
+                  <Box style={{marginLeft:'70%'}} display="flex" alignItems="center">
+                   <Box style={{width: '220px'}}>
+                    <Link style={{textDecoration:'none'}} to="/">Shopping List</Link>
+                    <Link style={{textDecoration:'none', marginLeft:'8%'}} to="/usual">The Usual</Link>
                    </Box>
                   </Box>
                 </Toolbar>
@@ -63,8 +64,9 @@ function App() {
             </div>
             <Switch>
               <Route exact path="/" component={ConnectedShoppingList}/>
-              <Route exact path="/saved" component={TheUsual}/>
-              <Route exact path="/add" component={AddItem}/>
+              <Route exact path="/usual" component={TheUsual}/>
+              <Route exact path="/addShop" component={AddItemShop}/>
+              <Route exact path="/addUsual" component={AddItemUsual}/>
               <Route component={NoMatch}/>
             </Switch>
           </BrowserRouter>
