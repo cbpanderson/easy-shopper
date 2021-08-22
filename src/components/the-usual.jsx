@@ -8,6 +8,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import DeleteIcon from '@material-ui/icons/Delete';
+import AddIcon from '@material-ui/icons/Add';
 
 import { deleteItemUsual } from '../actions.js';
 import { toggleCheckedUsual } from '../actions.js';
@@ -26,7 +28,7 @@ class TheUsual extends (React.Component) {
         render() {
         
             return (
-                <Card>
+                <Card style={{width:'30%', }}>
                   <CardContent>
                   <h2>The Usual</h2>
                     <ul>
@@ -47,8 +49,9 @@ class TheUsual extends (React.Component) {
                     </ul>
                   </CardContent>
                   <CardActions>
-                      <Button component={Link} to="/addUsual" >Add Item</Button>
-                      <Button component={Link} to="/" onClick={(e) => this.handleDelete(e)}>Delete Item</Button>
+                    <Button component={Link} to="/addUsual"><AddIcon /></Button>
+                      {/* <Button component={Link} to="/addUsual" >Add</Button> */}
+                      <Button component={Link} to="/usual"><DeleteIcon onClick={(e) => this.handleDelete(e)}/></Button>
                   </CardActions>
                 </Card>
             );

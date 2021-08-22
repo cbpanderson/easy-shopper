@@ -8,6 +8,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import DeleteIcon from '@material-ui/icons/Delete';
+import AddIcon from '@material-ui/icons/Add';
 
 import { deleteItemShop } from '../actions.js';
 import { toggleCheckedShop } from '../actions.js';
@@ -15,7 +17,6 @@ import { toggleCheckedShop } from '../actions.js';
 class ShoppingList extends (React.Component) {
     
 handleChange(event, index){
-    // console.log(event.target.value, index);
     this.props.toggleCheckedShop({index});
 }
 
@@ -27,7 +28,8 @@ handleDelete(event) {
     render() {
       //update global variable or local variable to say list = shopping-list
         return (
-            <Card>
+          <div style={{display:'flex'}}>
+            <Card style={{width:'30%', alignItems:'center'}}>
               <CardContent>
                 <h2>Shopping List</h2>
                 <ul>
@@ -48,10 +50,14 @@ handleDelete(event) {
                 </ul>
               </CardContent>
               <CardActions>
-                  <Button component={Link} to="/addShop" >Add Item</Button>
-                  <Button component={Link} to="/" onClick={(e) => this.handleDelete(e)}>Delete Item</Button>
+                  <Button component={Link} to="/addShop"><AddIcon /></Button>
+                  {/* <Button component={Link} to="/addShop" >Add Item</Button> */}
+                  {/* <Button component={Link} to="/shop" onClick={(e) => this.handleDelete(e)}>Delete Item</Button> */}
+                  <Button><DeleteIcon onClick={(e) => this.handleDelete(e)}/></Button>
+                  
               </CardActions>
             </Card>
+          </div>
         );
     }
 }

@@ -29,7 +29,7 @@ class AddItemUsual extends (React.Component) {
     }
 
     go_back(event) {
-        this.props.history.push('/');
+        this.props.history.push('/usual');
     };
     
     render() {

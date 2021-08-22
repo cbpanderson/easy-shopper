@@ -39,3 +39,10 @@ export function deleteItemUsual (data) {
         data: data
     }
 }
+
+export function moveUsualToShop (data) {
+    return {
+        type: 'MOVE_USUAL_TO_SHOP',
+        data: data
+    }
+}
