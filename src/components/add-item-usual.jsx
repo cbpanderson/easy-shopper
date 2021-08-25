@@ -16,6 +16,7 @@ class AddItemUsual extends (React.Component) {
         this.state = {item: ''};
     }
 
+
     handleSubmit(event) {
         console.log(event);
         event.preventDefault();
@@ -35,13 +36,14 @@ class AddItemUsual extends (React.Component) {
     render() {
         return (
           <form onSubmit={(e) => this.handleSubmit(e) }>
-            <Card>
+            <Card style={{width:'20%', marginLeft: '40%'}}>
                 <CardContent>
-                    <TextField label="Item Name" value={this.state.item} onChange={(e) => this.updateItem(e)}/>
+                    <h2>Add To The Usual</h2>
+                    <TextField label="pickles?" value={this.state.item} onChange={(e) => this.updateItem(e)}/>
                 </CardContent>
                 <CardActions>
-                    <Button type="button" onClick={(e) => this.go_back()}>Back to List</Button>
-                    <Button type="submit">Add Item</Button>
+                    <Button type="button" onClick={(e) => this.go_back()}>List</Button>
+                    <Button type="submit">Add</Button>
                 </CardActions>
             </Card>
           </form>  

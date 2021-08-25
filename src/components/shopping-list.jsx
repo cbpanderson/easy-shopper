@@ -29,7 +29,7 @@ handleDelete(event) {
       //update global variable or local variable to say list = shopping-list
         return (
           <div style={{display:'flex'}}>
-            <Card style={{width:'30%', alignItems:'center'}}>
+            <Card style={{width:'20%', marginLeft: '40%', paddingLeft: '4%'}}>
               <CardContent>
                 <h2>Shopping List</h2>
                 <ul>
@@ -51,9 +51,7 @@ handleDelete(event) {
               </CardContent>
               <CardActions>
                   <Button component={Link} to="/addShop"><AddIcon /></Button>
-                  {/* <Button component={Link} to="/addShop" >Add Item</Button> */}
-                  {/* <Button component={Link} to="/shop" onClick={(e) => this.handleDelete(e)}>Delete Item</Button> */}
-                  <Button><DeleteIcon onClick={(e) => this.handleDelete(e)}/></Button>
+                  <Button component={Link} to="/shop"><DeleteIcon  onClick={(e) => this.handleDelete(e)}/></Button>
                   
               </CardActions>
             </Card>

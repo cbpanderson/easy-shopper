@@ -28,7 +28,7 @@ class TheUsual extends (React.Component) {
         render() {
         
             return (
-                <Card style={{width:'30%', }}>
+                <Card style={{width:'20%', marginLeft: '40%', paddingLeft: '4%'}}>
                   <CardContent>
                   <h2>The Usual</h2>
                     <ul>
@@ -50,8 +50,7 @@ class TheUsual extends (React.Component) {
                   </CardContent>
                   <CardActions>
                     <Button component={Link} to="/addUsual"><AddIcon /></Button>
-                      {/* <Button component={Link} to="/addUsual" >Add</Button> */}
-                      <Button component={Link} to="/usual"><DeleteIcon onClick={(e) => this.handleDelete(e)}/></Button>
+                    <Button component={Link} to="/usual"><DeleteIcon onClick={(e) => this.handleDelete(e)}/></Button>
                   </CardActions>
                 </Card>
             );

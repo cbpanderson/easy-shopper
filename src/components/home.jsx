@@ -19,9 +19,17 @@ class Home extends (React.Component) {
             
             <div >
              {/* style={{ backgroundImage: `url(${background})` }} */}
-                <h2>Here are all of your staples. Click Add to Shopping List to dump them in your list and keep shopping!</h2>
+                <div style={{
+                    marginLeft:'35%', 
+                    marginBottom: '1%', 
+                    fontSize:'16pt', 
+                    marginTop: '2%', 
+                    color:'#00838f'}}>
+                        Here are all of your regularly purchased items.<br /> Dump them in your shopping list and keep shopping!</div>
                 <TheUsual></TheUsual>
-                <Button component={Link} to="/shop" onClick={(e) => this.handleMoveToShop(e)}>Send to Shopping List</Button>
+                <Button style={{marginLeft: '43%', marginTop: '1%', backgroundColor:'#00838f'}} 
+                        component={Link} to="/shop" 
+                        onClick={(e) => this.handleMoveToShop(e)}>Send to Shopping List</Button>
             </div>
         );
     }

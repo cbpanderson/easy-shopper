@@ -20,18 +20,20 @@ import ConnectedHome from './components/home';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: '#ffeb3b',
     },
     secondary: {
-      main: '#19857b',
+      main: '#556cd6',
     },
     error: {
       main: red.A400,
     },
     background: {
-      default: '#fff',
+      default: '#ffff72',
     },
-  },
+ 
+  },  
+
 });
 
 const NoMatch = ({ location }) => {
@@ -49,16 +51,14 @@ function App() {
           <BrowserRouter>
             <AppBar position="relative">
                 <Toolbar>
-                  <Typography variant="h6" color="inherit" noWrap>
-                    Easy Shopper
+                  <Typography style={{marginRight:'60%', marginLeft:'5%', color:'#00838f'}} variant="h5" color="inherit" noWrap disableGutters>
+                    <Box>Easy Shopper</Box>
                   </Typography>
-                  <Box style={{marginLeft:'75%'}} display="flex" alignItems="center">
-                   <Box style={{width: '250px'}}>
-                    <Link style={{textDecoration:'none'}} to="/">Home</Link>
-                    <Link style={{textDecoration:'none', marginLeft:'8%'}} to="/shop">Shopping List</Link>
-                    <Link style={{textDecoration:'none', marginLeft:'8%'}} to="/usual">The Usual</Link>
+                   <Box style={{width:'20%'}}>
+                    <Link style={{textDecoration:'none', fontSize:'12pt', color:'#00838f'}} to="/">Home</Link>
+                    <Link style={{textDecoration:'none', marginLeft:'8%', fontSize:'12pt', color:'#00838f'}} to="/shop">Shopping List</Link>
+                    <Link style={{textDecoration:'none', marginLeft:'8%', fontSize:'12pt', color:'#00838f'}} to="/usual">The Usual</Link>
                    </Box>
-                  </Box>
                 </Toolbar>
             </AppBar>
             <div>
