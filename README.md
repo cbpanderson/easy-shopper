@@ -1,3 +1,8 @@
+This is a React App that also uses Redux and Material UI. 
+
+Its a Shopping List app that allows the user to view a save, commonly bought items list on the home screen and add that to a separate shopping list on another page. The idea is that you store your frequently (weekly or whatever) bought items on 'The Usual' so that you can very efficiently create your weekly shopping list without having to add those common items everytime you build a list. You can edit The Usual list as well as the Shopping List to add or delete items. Happy shopping!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
