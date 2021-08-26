@@ -11,7 +11,7 @@ import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import ConnectedShoppingList from './components/shopping-list';
-import ConnectedTheUsual from './components/the-usual';
+// import ConnectedTheUsual from './components/the-usual';
 import store from './store.js';
 import AddItemShop from './components/add-item-shop';
 import AddItemUsual from './components/add-item-usual';
@@ -51,13 +51,13 @@ function App() {
           <BrowserRouter>
             <AppBar position="relative">
                 <Toolbar>
-                  <Typography style={{marginRight:'60%', marginLeft:'5%', color:'#00838f'}} variant="h5" color="inherit" noWrap disableGutters>
+                  <Typography style={{marginRight:'60%', marginLeft:'5%', color:'#00838f'}} variant="h5" color="inherit" noWrap>
                     <Box>Easy Shopper</Box>
                   </Typography>
                    <Box style={{width:'20%'}}>
-                    <Link style={{textDecoration:'none', fontSize:'12pt', color:'#00838f'}} to="/">Home</Link>
+                    <Link style={{textDecoration:'none', fontSize:'12pt', color:'#00838f'}} to="/">The Usual</Link>
                     <Link style={{textDecoration:'none', marginLeft:'8%', fontSize:'12pt', color:'#00838f'}} to="/shop">Shopping List</Link>
-                    <Link style={{textDecoration:'none', marginLeft:'8%', fontSize:'12pt', color:'#00838f'}} to="/usual">The Usual</Link>
+                    {/* <Link style={{textDecoration:'none', marginLeft:'8%', fontSize:'12pt', color:'#00838f'}} to="/usual">The Usual</Link> */}
                    </Box>
                 </Toolbar>
             </AppBar>
@@ -67,7 +67,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={ConnectedHome}/>
               <Route exact path="/shop" component={ConnectedShoppingList}/>
-              <Route exact path="/usual" component={ConnectedTheUsual}/>
+              {/* <Route exact path="/usual" component={ConnectedTheUsual}/> */}
               <Route exact path="/addShop" component={AddItemShop}/>
               <Route exact path="/addUsual" component={AddItemUsual}/>
               <Route component={NoMatch}/>

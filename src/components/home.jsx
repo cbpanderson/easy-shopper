@@ -20,14 +20,14 @@ class Home extends (React.Component) {
             <div >
              {/* style={{ backgroundImage: `url(${background})` }} */}
                 <div style={{
-                    marginLeft:'35%', 
+                    marginLeft:'30%', 
                     marginBottom: '1%', 
                     fontSize:'16pt', 
                     marginTop: '2%', 
                     color:'#00838f'}}>
-                        Here are all of your regularly purchased items.<br /> Dump them in your shopping list and keep shopping!</div>
+                    Dump your usuals in your shopping list and keep shopping!</div>
                 <TheUsual></TheUsual>
-                <Button style={{marginLeft: '43%', marginTop: '1%', backgroundColor:'#00838f'}} 
+                <Button style={{marginLeft: '42%', marginTop: '1%', backgroundColor:'#00838f'}} 
                         component={Link} to="/shop" 
                         onClick={(e) => this.handleMoveToShop(e)}>Send to Shopping List</Button>
             </div>

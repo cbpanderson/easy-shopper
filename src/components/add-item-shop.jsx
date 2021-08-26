@@ -35,9 +35,13 @@ class AddItemShop extends (React.Component) {
     render() {
         return (
           <form onSubmit={(e) => this.handleSubmit(e) }>
-            <Card style={{width:'20%', marginLeft: '40%', paddingLeft: '2%'}}>
+            <Card style={{
+                width:'20%', 
+                marginLeft: '40%', 
+                paddingLeft: '2%',
+                marginTop: '2%'}}>
                 <CardContent>
-                    <h2>Add To Shopping List</h2>
+                    <h2 style={{color:'#00838f'}}>Add To Shopping List</h2>
                     <TextField label="peanut butter?" value={this.state.item} onChange={(e) => this.updateItem(e)}/>
                 </CardContent>
                 <CardActions>

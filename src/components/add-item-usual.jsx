@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import { TextField } from '@material-ui/core';
 
 import {addItemUsual} from '../actions.js';
+import { saveToLocalStorage } from './util.js';
 
 class AddItemUsual extends (React.Component) {
     constructor(props) {
@@ -23,6 +24,7 @@ class AddItemUsual extends (React.Component) {
 
         this.props.addItemUsual({name: this.state.item});
         this.setState({item: ''});
+        saveToLocalStorage(this.state);
     }
 
     updateItem(event) {
@@ -30,15 +32,18 @@ class AddItemUsual extends (React.Component) {
     }
 
     go_back(event) {
-        this.props.history.push('/usual');
+        this.props.history.push('/');
     };
     
     render() {
         return (
           <form onSubmit={(e) => this.handleSubmit(e) }>
-            <Card style={{width:'20%', marginLeft: '40%'}}>
+            <Card style={{
+                width:'20%', 
+                marginLeft: '40%', 
+                marginTop: '2%'}}>
                 <CardContent>
-                    <h2>Add To The Usual</h2>
+                    <h2 style={{color:'#00838f'}}>Add To The Usual</h2>
                     <TextField label="pickles?" value={this.state.item} onChange={(e) => this.updateItem(e)}/>
                 </CardContent>
                 <CardActions>

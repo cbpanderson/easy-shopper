@@ -29,9 +29,13 @@ handleDelete(event) {
       //update global variable or local variable to say list = shopping-list
         return (
           <div style={{display:'flex'}}>
-            <Card style={{width:'20%', marginLeft: '40%', paddingLeft: '4%'}}>
+            <Card style={{
+              width:'20%', 
+              marginLeft: '40%', 
+              paddingLeft: '4%',
+              marginTop: '2%'}}>
               <CardContent>
-                <h2>Shopping List</h2>
+                <h2 style={{color:'#00838f'}}>Shopping List</h2>
                 <ul>
                   {this.props.shopping_list.map((item, index) => {
                     return <li style={{listStyleType:'none'}} key = {index}>

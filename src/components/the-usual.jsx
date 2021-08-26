@@ -13,6 +13,8 @@ import AddIcon from '@material-ui/icons/Add';
 
 import { deleteItemUsual } from '../actions.js';
 import { toggleCheckedUsual } from '../actions.js';
+import { loadFromLocalStorage } from './util.js';
+import { saveToLocalStorage } from './util.js';
 
 class TheUsual extends (React.Component) {
         
@@ -23,16 +25,26 @@ class TheUsual extends (React.Component) {
     handleDelete(event) {
       this.props.deleteItemUsual({});
     }
-    
-    
+  
         render() {
-        
+          let currentData = "";
+          if (loadFromLocalStorage()!== "undefined"){
+            currentData = loadFromLocalStorage();
+          }
+          else {
+            currentData = this.props;
+          }
+
             return (
-                <Card style={{width:'20%', marginLeft: '40%', paddingLeft: '4%'}}>
+                <Card style={{
+                  width:'20%', 
+                  marginLeft: '40%', 
+                  paddingLeft: '4%',
+                  marginTop: '2%'}}>
                   <CardContent>
-                  <h2>The Usual</h2>
+                  <h2 style={{color:'#00838f'}}>The Usual</h2>
                     <ul>
-                      {this.props.the_usual.map((item, index) => {
+                    {currentData.map((item, index) => {
                         return <li style={{listStyleType:'none'}} key = {index}>
                             <FormControlLabel
                               control={
@@ -45,7 +57,7 @@ class TheUsual extends (React.Component) {
                               label={item.name}
                             />
                         </li>;
-                      })}
+                    })}
                     </ul>
                   </CardContent>
                   <CardActions>
@@ -59,7 +71,8 @@ class TheUsual extends (React.Component) {
     
     //reads data from state(component) and maps to this.props.shopping_list
     function mapStateToProps(state) {
-        return {the_usual: state.the_usual}; 
+      saveToLocalStorage(state);
+      return {the_usual: state.the_usual}; 
     }
     //writes data to store
     function mapDispatchToProps (dispatch) {
@@ -73,5 +86,7 @@ class TheUsual extends (React.Component) {
         }
     }
     
+    
+
     var ConnectedTheUsual = connect(mapStateToProps, mapDispatchToProps)(TheUsual);
     export default ConnectedTheUsual;

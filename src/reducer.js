@@ -23,6 +23,7 @@ export function shoppingListReducer (state, action) {
         new_state.shopping_list[action.data.index].isChecked = !state.shopping_list[action.data.index].isChecked;
     } else if(action.type === 'ADD_ITEM_SHOP') {
         new_state.shopping_list.push({name: action.data.name, isChecked: false});
+        
     } else if((action.type === 'DELETE_ITEM_SHOP') ){
         new_state.shopping_list = new_state.shopping_list.filter(item => !item.isChecked);
 
